@@ -1,33 +1,29 @@
-<template>
-  <div class="stars">
-    <span v-for="n in 5" :key="n" :class="{ filled: n <= rating }">
-      ★
-    </span>
-  </div>
-</template>
-
 <script>
+import TagBadge from "./TagBadge.vue"
+
 export default {
+  components: {
+    TagBadge,
+  },
+
   props: {
     rating: {
       type: Number,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>
+
+<template>
+  <div class="stars">
+    <TagBadge :rating="rating" label="★" />
+  </div>
+</template>
 
 <style scoped>
 .stars {
   font-size: 18px;
   letter-spacing: 2px;
-}
-
-.stars span {
-  color: #d1d5db;
-}
-
-.stars span.filled {
-  color: #f59e0b;
 }
 </style>

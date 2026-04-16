@@ -1,3 +1,20 @@
+<script>
+import RatingStars from "./RatingStars.vue"
+
+export default {
+  components: {
+    RatingStars,
+  },
+
+  props: {
+    recipe: {
+      type: Object,
+      required: true,
+    },
+  },
+}
+</script>
+
 <template>
   <div class="card">
     <div class="card-header">
@@ -15,23 +32,6 @@
     </div>
   </div>
 </template>
-
-<script>
-import RatingStars from './RatingStars.vue'
-
-export default {
-  components: {
-    RatingStars
-  },
-
-  props: {
-    recipe: {
-      type: Object,
-      required: true
-    }
-  }
-}
-</script>
 
 <style scoped>
 .card {
